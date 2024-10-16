@@ -1,1 +1,2 @@
+administradores = []
 bibliotecarios = []
