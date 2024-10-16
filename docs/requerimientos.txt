@@ -1,0 +1,92 @@
+Requerimientos Funcionales
+1. Gestión de Usuarios
+
+    El sistema debe permitir registrar y gestionar usuarios (administradores, bibliotecarios y lectores).
+    Los usuarios deben autenticarse con nombre de usuario y contraseña.
+    Los administradores podrán gestionar otros usuarios (crear, modificar y eliminar cuentas).
+    Los bibliotecarios podrán gestionar préstamos y devoluciones.
+    Los lectores podrán consultar el catálogo de libros y revisar su historial de préstamos.
+
+2. Gestión de Libros
+
+    El sistema debe permitir a los bibliotecarios añadir, editar y eliminar libros del catálogo.
+    Cada libro debe tener los siguientes atributos: título, autor, ISBN, editorial, año de publicación, categoría y cantidad disponible.
+    El sistema debe permitir buscar libros por título, autor, ISBN, categoría o palabra clave.
+
+3. Préstamos de Libros
+
+    El sistema debe permitir a los bibliotecarios gestionar los préstamos de libros.
+    Los lectores pueden solicitar un préstamo de un libro si está disponible en la biblioteca.
+    El sistema debe verificar la disponibilidad del libro antes de confirmar el préstamo.
+    El sistema debe permitir a los bibliotecarios registrar devoluciones de libros.
+
+4. Reservas de Libros
+
+    Los lectores deben poder reservar libros que no estén disponibles.
+    El sistema debe notificar al lector cuando el libro reservado esté disponible.
+    Los libros reservados deben quedar bloqueados durante un tiempo determinado (por ejemplo, 48 horas) para que el lector los recoja.
+
+5. Historial de Préstamos y Multas
+
+    El sistema debe registrar el historial de préstamos de cada lector.
+    Los lectores pueden consultar su historial de préstamos y devoluciones.
+    El sistema debe generar automáticamente multas en caso de retraso en las devoluciones y notificar al lector sobre ellas.
+    Los bibliotecarios deben poder gestionar las multas y permitir el pago de las mismas.
+
+6. Notificaciones
+
+    El sistema debe enviar notificaciones por correo electrónico o en la aplicación para informar sobre:
+        Libros reservados disponibles.
+        Recordatorios de devolución de libros.
+        Multas por retraso.
+        Confirmaciones de préstamos y devoluciones.
+
+7. Reportes
+
+    El sistema debe generar reportes para los administradores y bibliotecarios, como:
+        Reporte de libros más prestados.
+        Reporte de usuarios con más multas.
+        Reporte de libros con mayor demanda (reservas).
+        Estado actual del inventario de libros.
+
+8. Seguridad
+
+    El sistema debe utilizar cifrado para proteger las contraseñas de los usuarios.
+    Los administradores deben tener acceso a todas las funciones del sistema.
+    Los bibliotecarios deben tener acceso limitado a las funciones relacionadas con la gestión de libros, préstamos y reservas.
+    Los lectores deben tener acceso solo a las funciones de búsqueda, reserva y consulta de su historial.
+
+Requerimientos No Funcionales
+1. Rendimiento
+
+    El sistema debe ser capaz de gestionar al menos 10,000 libros y 5,000 usuarios simultáneamente sin afectar el rendimiento.
+    El sistema debe ser capaz de realizar búsquedas en el catálogo en menos de 3 segundos.
+
+2. Disponibilidad
+
+    El sistema debe estar disponible el 99.9% del tiempo para garantizar que los usuarios puedan consultar el catálogo y gestionar préstamos en cualquier momento.
+
+3. Escalabilidad
+
+    El sistema debe ser escalable, permitiendo la adición de nuevas funcionalidades (por ejemplo, integración con bibliotecas digitales o gestión de e-books) sin afectar su estabilidad.
+
+4. Usabilidad
+
+    La interfaz del sistema debe ser intuitiva y fácil de usar tanto para bibliotecarios como para lectores, con un diseño responsive que permita su uso en dispositivos móviles.
+
+5. Seguridad de Datos
+
+    Los datos de los usuarios y los libros deben estar protegidos contra accesos no autorizados.
+    El sistema debe contar con backups periódicos de la base de datos y un mecanismo de recuperación en caso de fallos.
+
+6. Compatibilidad
+
+    El sistema debe ser compatible con los principales navegadores web (Chrome, Firefox, Safari) y debe funcionar en dispositivos móviles y tablets.
+    En caso de una aplicación de escritorio, debe ser compatible con sistemas operativos como Windows, Linux y macOS.
+
+Requerimientos Opcionales
+
+    Integración con bibliotecas digitales para el préstamo de e-books.
+    Lectura de códigos de barras o RFID para facilitar el control de inventario y el proceso de préstamo.
+    Sistema de recomendaciones basado en el historial de préstamos de cada lector.
+    Integración con redes sociales para que los usuarios compartan recomendaciones de libros.
