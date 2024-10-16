@@ -1,6 +1,6 @@
-- 👋 Hi, I’m @kkstrofico
-- 👀 I’m interested in programing web
-- 🌱 I’m currently learning python
+#Proyecto de la biblioteca
+Proyecto practico de gestion de una biblioteca
+
 
 <!---
 kkstrofico/kkstrofico is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
