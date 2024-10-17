@@ -28,20 +28,20 @@ class Administrador(Usuario):
         if opcion == 'A':#Modificar bibliotecarios
             while buscar_usuario_existente(usuario,'Nombre',bsd.bibliotecarios) == False:
                 print('Error el usuario no existe')
-                usuario = input('NOTA: Ingresa exit para volver al menu\nIngresa el nombre del usuario a modificar: ').upper()
+                usuario = input('NOTA: Ingresa exit para volver al menu\nIngresa el nombre del usuario a modificar: ')
                 if usuario == 'EXIT':
                     Administrador().modificar_usuario()
                    
             opcion = input('A.Cambiar Nombre\nB.Cambiar Contraseña\nDigita aqui: ').upper()
             cambiar_datos_usuario(opcion,usuario)
-        elif opcion == 'B':#Modificar Lecoteres
+        elif opcion == 'B':#Modifica Lectores
             while buscar_usuario_existente(usuario,'Nombre',bsd.bibliotecarios) == False:
                 print('Error el usuario no existe')
-                usuario = input('NOTA: Ingresa exit para volver al menu\nIngresa el nombre del usuario a modificar: ').upper()
+                usuario = input('Ingresa el nombre del usuario a modificar: ')
             opcion = input('A.Cambiar Nombre\nB.Cambiar Contraseña\nDigita aqui: ').upper()
             cambiar_datos_usuario(opcion,usuario)
     def eliminar_usuario(self):#Permite eliminar un usuario
-        tipo_usuario = input('Selecciona\nA.Eliminar Bibliotecario\nB.Eliminar Lector')
+        tipo_usuario = input('Selecciona\nA.Eliminar Bibliotecario\nB.Eliminar Lector\nDIGITA AQUI: ').upper()
         usuario = input('\nIngresa el nombre del usuario que deseas eliminar: ')
         lista = []
         if tipo_usuario == 'A':
@@ -50,9 +50,5 @@ class Administrador(Usuario):
             lista = bsd.lectores
         while buscar_usuario_existente(usuario,'Nombre',lista) == False:
                 print('Error el usuario no existe')
-                usuario = input('NOTA: Ingresa exit para volver al menu\nIngresa el nombre del usuario a eliminar: ').upper()
+                usuario = input('Ingresa el nombre del usuario a eliminar: ')
         elimina_usuario(usuario,lista)
-        
-        
-Administrador().eliminar_usuario()
-print(bsd.bibliotecarios)
