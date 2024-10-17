@@ -10,13 +10,13 @@ class Administrador(Usuario):
     def crear_usuarios(self):#Le permite al admistrador registrar bibliotecarios y lectores
         print(f'ELIGE UNA OPCION\n')
         opcion = input('A. Registrar Bibliotecario\nB. Registrar Lector\nDIGITA AQUI: ').upper()
-        if opcion == 'A':
-            print('\nIngresa los datos de Blibliotecario ')
+        if opcion == 'A':#Registrar Bibliotecario
+            print('\nIngresa los datos de Bibliotecario ')
             nombre = input('NOMBRE: ')
             contraseña = input('CONTRASEÑA: ')
             bibliotecario = Bibliotecatario(nombre,contraseña)
             bibliotecario.registrar()
-        elif opcion == 'B':
+        elif opcion == 'B':#Registrar Lector
             print('\nIngresa los datos del lector')
             nombre = input('NOMBRE: ')
             contraseña = input('CONTRASEÑA: ') 
