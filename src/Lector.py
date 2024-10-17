@@ -1,4 +1,4 @@
-import bsd
+import bsd as bsd
 from Usuario import *
 class Lector(Usuario):
     def regisrar(self):#Sube los datos del Lector a la bsd

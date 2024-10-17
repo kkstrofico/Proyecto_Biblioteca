@@ -1,4 +1,4 @@
-import bsd
+import bsd as bsd
 from Usuario import *
 class Bibliotecatario(Usuario):
     def registrar(self):#Sube los datos del Biblioteacario a la bsd 

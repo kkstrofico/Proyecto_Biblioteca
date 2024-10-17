@@ -1,4 +1,5 @@
-import bsd
+import bsd 
+from utils import * 
 from Usuario import *
 from Lector import *
 from Bibliotecario import *
@@ -21,5 +22,24 @@ class Administrador(Usuario):
             contraseña = input('CONTRASEÑA: ') 
             lector = Lector(nombre,contraseña)
             lector.regisrar()
-    def eliminar_usuario():
+    def modificar_usuario(self):#Le permite al administrador modificar los datos de los usuarios 
+        opcion = input('A.Modificar Bibliotecario\nB.Modificar Lector\nDigita aqui: ').upper()
+        usuario = input('Ingresa el nombre del usuario a modificar: ')
+        if opcion == 'A':#Modificar bibliotecarios
+            while buscar_usuario_existente(usuario,'Nombre',bsd.bibliotecarios) == False:
+                print('Error el usuario no existe')
+                usuario = input('NOTA: Ingresa exit para volver al menu\nIngresa el nombre del usuario a modificar: ').upper()
+                if usuario == 'EXIT':
+                    Administrador().modificar_usuario()
+                   
+            opcion = input('A.Cambiar Nombre\nB.Cambiar Contraseña\nDigita aqui: ').upper()
+            cambiar_datos_usuario(opcion,usuario)
+        elif opcion == 'B':#Modificar Lecoteres
+            while buscar_usuario_existente(usuario,'Nombre',bsd.bibliotecarios) == False:
+                print('Error el usuario no existe')
+                usuario = input('NOTA: Ingresa exit para volver al menu\nIngresa el nombre del usuario a modificar: ').upper()
+            opcion = input('A.Cambiar Nombre\nB.Cambiar Contraseña\nDigita aqui: ').upper()
+            cambiar_datos_usuario(opcion,usuario)
+    def eliminar_usuario(self):
         pass
+Administrador().modificar_usuario()
