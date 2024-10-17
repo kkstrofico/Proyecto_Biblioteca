@@ -16,6 +16,10 @@ def cambiar_datos_usuario(opcion,usuario):#Funcion que permite modificar los dat
                 i['Contraseña'] = nueva_contrasena
                 print(f"Datos Actualizados: {i}")
                 print(bsd.bibliotecarios)
+def elimina_usuario(usuario_borrar,lista):#Funcion que elimina un usuario 
+    for i in lista:
+        if i['Nombre'] == usuario_borrar:
+            lista.remove(i)
 def buscar_usuario_existente(dato,dato_buscar,lista):#Funcion para comprobar si un usuario existe
     for i in lista:
         if i[dato_buscar] == dato:
