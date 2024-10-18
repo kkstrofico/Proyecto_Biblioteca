@@ -29,3 +29,23 @@ class Bibliotecatario(Usuario):
         if contador == 0:
             print('\n\tNo se encontro el libro\nAsegurate de ingresarlo correctamente')
             Bibliotecatario(self.nombre_usuario,self.nombre_usuario).retirar_prestamo()
+    #Gestionar catalogo de libros
+    def añadir_libro(self):#Permite agregar un libro al catalogo de libros
+        print('\n\tAgregar libro al catalogo de libros\n')
+        titulo = input('TITULO: ')
+        autor = input('AUTOR: ')
+        isbm = input('ISBM: ')
+        editorial = input('EDITORIAL: ')
+        categoria = input('CATEGORIA: ')
+        año_de_publicacion = input('AÑO DE PUBLICACION: ')
+        categoria = input('CATEGORIA: ')
+        cantidad = input('CANTIDAD: ')
+        libro = {'Titulo':titulo,
+                 'Autor': autor,
+                 'ISBM': isbm,
+                 'Editorial':editorial,
+                 'Categoria':categoria,
+                 'Año Publicacion':año_de_publicacion,
+                 'Cantidad':cantidad
+                 } 
+        catalogo.append(libro)

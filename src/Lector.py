@@ -7,10 +7,8 @@ class Lector(Usuario):
     def consultar_catalogo(self):#Permite consultar el catalogo de libros
         df = pd.DataFrame(catalogo)
         print(df)
-    def consultar_prestamos(self):#Permite ver los libros prestados
+    def consultar_prestamos(self):#Permite revisar el historial de los libros prestados
         for i in lectores:
             if i['Nombre'] == self.nombre_usuario:
                 print(i['Prestamos'])
-        
-Lector('Edier',123).consultar_prestamos()
             
