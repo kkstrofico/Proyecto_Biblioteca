@@ -20,10 +20,11 @@ def elimina_usuario(usuario_borrar,lista):#Funcion que elimina un usuario
     for i in lista:
         if i['Nombre'] == usuario_borrar:
             lista.remove(i)
-def buscar_usuario_existente(dato,dato_buscar,lista):#Funcion para comprobar si un usuario existe
+def buscar_dato_existente(dato,dato_buscar,lista):#Funcion para comprobar si un usuario existe
     for i in lista:
         if i[dato_buscar] == dato:
             return True
         else:
             return False
-
+def volver_menu(menu):#Funcion que permite regresar al usuario al menu deseado
+    menu

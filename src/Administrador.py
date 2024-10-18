@@ -26,7 +26,7 @@ class Administrador(Usuario):
         opcion = input('A.Modificar Bibliotecario\nB.Modificar Lector\nDigita aqui: ').upper()
         usuario = input('Ingresa el nombre del usuario a modificar: ')
         if opcion == 'A':#Modificar bibliotecarios
-            while buscar_usuario_existente(usuario,'Nombre',bsd.bibliotecarios) == False:
+            while buscar_dato_existente(usuario,'Nombre',bsd.bibliotecarios) == False:
                 print('Error el usuario no existe')
                 usuario = input('NOTA: Ingresa exit para volver al menu\nIngresa el nombre del usuario a modificar: ')
                 if usuario == 'EXIT':
@@ -35,7 +35,7 @@ class Administrador(Usuario):
             opcion = input('A.Cambiar Nombre\nB.Cambiar Contraseña\nDigita aqui: ').upper()
             cambiar_datos_usuario(opcion,usuario)
         elif opcion == 'B':#Modifica Lectores
-            while buscar_usuario_existente(usuario,'Nombre',bsd.bibliotecarios) == False:
+            while buscar_dato_existente(usuario,'Nombre',bsd.bibliotecarios) == False:
                 print('Error el usuario no existe')
                 usuario = input('Ingresa el nombre del usuario a modificar: ')
             opcion = input('A.Cambiar Nombre\nB.Cambiar Contraseña\nDigita aqui: ').upper()
@@ -48,7 +48,7 @@ class Administrador(Usuario):
             lista = bsd.bibliotecarios
         elif tipo_usuario == 'B':
             lista = bsd.lectores
-        while buscar_usuario_existente(usuario,'Nombre',lista) == False:
+        while buscar_dato_existente(usuario,'Nombre',lista) == False:
                 print('Error el usuario no existe')
                 usuario = input('Ingresa el nombre del usuario a eliminar: ')
         elimina_usuario(usuario,lista)
