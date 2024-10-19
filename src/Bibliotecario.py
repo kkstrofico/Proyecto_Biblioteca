@@ -64,3 +64,22 @@ class Bibliotecatario(Usuario):
         else:
             print('A ocurrido un error al buscar el libro')
             volver_menu(Bibliotecatario(self.nombre_usuario,self.contreseña).editar_libro())
+    def eliminar_libro(self):#Permite eliminar un libro del catalogo
+        print('\n\tIngresa los datos del libro para encontrar el libro que deseas eliminar\n')
+        titulo = input('TITULO: ').capitalize()
+        buscar_libro = buscar_dato_existente(titulo,'Titulo',catalogo)
+        if buscar_libro == True:#Eliminar libro
+            print('Libro encontrado exitosamente')
+            opcion_eliminar = input('\nEstas seguro de eliminar el libro si/no: ').capitalize()
+            if opcion_eliminar == 'Si':
+                for i in catalogo:
+                    if i['Titulo'] == titulo:
+                        catalogo.remove(i)
+            elif opcion_eliminar == 'No':
+                print('Se volvera al menu')
+                volver_menu(Bibliotecatario(self.nombre_usuario,self.contreseña).eliminar_libro())
+        elif buscar_libro == False:
+            print('No se encontro el libro')
+            volver_menu(Bibliotecatario(self.nombre_usuario,self.contreseña).editar_libro())
+Bibliotecatario().eliminar_libro()
+print(catalogo)
