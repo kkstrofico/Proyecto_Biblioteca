@@ -13,7 +13,7 @@ class Bibliotecatario(Usuario):
             if i['Nombre'] == nombre_lector:
                 i['Prestamos'] = [titulo_libro]
     #Devoluciones
-    def retirar_prestamo(self):#Se encarga de quitar el libro de los prestamos de un lector
+    def retirar_prestamo(self):#Se encarga de quitar un libro de los prestamos de un lector
         print('\n\tDevolucion\n')
         nombre_lector = input('Ingresa el nombre del prestador: ')
         while buscar_dato_existente(nombre_lector,'Nombre',lectores) == False:
@@ -32,7 +32,7 @@ class Bibliotecatario(Usuario):
     #Gestionar catalogo de libros
     def añadir_libro(self):#Permite agregar un libro al catalogo de libros
         print('\n\tAgregar libro al catalogo de libros\n')
-        titulo = input('TITULO: ')
+        titulo = input('TITULO: ').capitalize()
         autor = input('AUTOR: ')
         isbm = input('ISBM: ')
         editorial = input('EDITORIAL: ')
@@ -42,10 +42,25 @@ class Bibliotecatario(Usuario):
         cantidad = input('CANTIDAD: ')
         libro = {'Titulo':titulo,
                  'Autor': autor,
-                 'ISBM': isbm,
+                 'Isbm': isbm,
                  'Editorial':editorial,
                  'Categoria':categoria,
                  'Año Publicacion':año_de_publicacion,
                  'Cantidad':cantidad
                  } 
         catalogo.append(libro)
+    def editar_libro(self):#Permite modificar los datos de un libro en el catalogo
+        print('\n\tIngresa los datos del libro para encontrar el libro que deseas modificar\n')
+        titulo = input('TITULO: ').capitalize()
+        buscar_libro = buscar_dato_existente(titulo,'Titulo',catalogo)
+        if buscar_libro == True:#Editar libro
+            print('Libro Encontrado Exitosamente.')
+            dato_modificar = input('Que deseas modificar del libro:\n\nTITULO\nAUTOR\nISBM\nEDITORIAL\nCATEGORIA\nAÑO PUBLICACION\nCANTIDAD\nDIGITA AQUI: ').capitalize()
+            nuevo_dato = input(f'Ingresa el\la nuev@ {dato_modificar}:  ')
+            modificar_dato(catalogo,titulo,dato_modificar,nuevo_dato)#Modifica un dato de una lista
+        elif buscar_libro == False:
+            print('No se encontro el libro')
+            volver_menu(Bibliotecatario(self.nombre_usuario,self.contreseña).editar_libro())
+        else:
+            print('A ocurrido un error al buscar el libro')
+            volver_menu(Bibliotecatario(self.nombre_usuario,self.contreseña).editar_libro())

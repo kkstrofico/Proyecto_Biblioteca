@@ -3,4 +3,4 @@ administradores = []
 bibliotecarios = [{'Nombre':'Edier','Contraseña':123}]
 lectores = [{'Nombre':'Edier','Contraseña':123,"Prestamos":['Principito']}]
 #Catagolo de libros
-catalogo = []
+catalogo = [{'Titulo':'Principito'}]
