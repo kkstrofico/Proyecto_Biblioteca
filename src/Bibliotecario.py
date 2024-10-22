@@ -12,6 +12,7 @@ class Bibliotecatario(Usuario):
         for i in lectores:
             if i['Nombre'] == nombre_lector:
                 i['Prestamos'] = [titulo_libro]
+        mermar_libro(catalogo,titulo_libro)
     #Devoluciones
     def retirar_prestamo(self):#Se encarga de quitar un libro de los prestamos de un lector
         print('\n\tDevolucion\n')
@@ -56,7 +57,7 @@ class Bibliotecatario(Usuario):
         if buscar_libro == True:#Editar libro
             print('Libro Encontrado Exitosamente.')
             dato_modificar = input('Que deseas modificar del libro:\n\nTITULO\nAUTOR\nISBM\nEDITORIAL\nCATEGORIA\nAÑO PUBLICACION\nCANTIDAD\nDIGITA AQUI: ').capitalize()
-            nuevo_dato = input(f'Ingresa el\la nuev@ {dato_modificar}:  ')
+            nuevo_dato = input(f'Ingresa el-la nuev@ {dato_modificar}:  ')
             modificar_dato(catalogo,titulo,dato_modificar,nuevo_dato)#Modifica un dato de una lista
         elif buscar_libro == False:
             print('No se encontro el libro')
@@ -81,5 +82,5 @@ class Bibliotecatario(Usuario):
         elif buscar_libro == False:
             print('No se encontro el libro')
             volver_menu(Bibliotecatario(self.nombre_usuario,self.contreseña).editar_libro())
-Bibliotecatario().eliminar_libro()
+Bibliotecatario().realizar_prestamo()
 print(catalogo)

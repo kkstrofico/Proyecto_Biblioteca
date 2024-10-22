@@ -29,6 +29,10 @@ def buscar_dato_existente(dato,dato_buscar,lista):#Funcion para comprobar si un 
             return False
 def volver_menu(menu):#Funcion que permite regresar al usuario al menu deseado
     menu
+def mermar_libro(lista,libro_solicitado):
+    for i in lista:
+        if i['Titulo'] == libro_solicitado:
+            i['Cantidad'] -= 1
 def modificar_dato(lista,dato,tipo_dato,nuevo_dato):#Funcion que modifica un dato x de una lista x por otro dato x
     for i in lista:
         if dato == i[tipo_dato]:
