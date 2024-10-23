@@ -82,5 +82,3 @@ class Bibliotecatario(Usuario):
         elif buscar_libro == False:
             print('No se encontro el libro')
             volver_menu(Bibliotecatario(self.nombre_usuario,self.contreseña).editar_libro())
-Bibliotecatario().realizar_prestamo()
-print(catalogo)

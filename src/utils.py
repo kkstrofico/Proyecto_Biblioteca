@@ -20,9 +20,9 @@ def elimina_usuario(usuario_borrar,lista):#Funcion que elimina un usuario
     for i in lista:
         if i['Nombre'] == usuario_borrar:
             lista.remove(i)
-def buscar_dato_existente(dato,dato_buscar,lista):#Funcion para comprobar si un usuario existe
+def buscar_dato_existente(dato,tipo_dato,lista):#Funcion para comprobar si un usuario existe
     for i in lista:
-        if i[dato_buscar] == dato:
+        if i[tipo_dato] == dato:
             print(i)
             return True
         else:
@@ -37,3 +37,9 @@ def modificar_dato(lista,dato,tipo_dato,nuevo_dato):#Funcion que modifica un dat
     for i in lista:
         if dato == i[tipo_dato]:
             i[tipo_dato] = nuevo_dato
+def libro_disponible(libro):# Comprueba que exista cantidad suficiente de libros
+    for i in bsd.catalogo:
+        if i['Titulo'] == libro:
+            if i['Cantidad'] <= 0:
+                print(f'Los siento no quedan mas libros de {libro}')
+                return True
